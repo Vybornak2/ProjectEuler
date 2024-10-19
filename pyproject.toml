@@ -1,0 +1,11 @@
+[project]
+name = "projecteuler"
+version = "0.1.0"
+description = "Package that contains solutions to Project Euler problems"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.9.2",
+    "numpy>=2.1.2",
+    "scipy>=1.14.1",
+]
