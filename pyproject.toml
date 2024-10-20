@@ -5,7 +5,11 @@ description = "Package that contains solutions to Project Euler problems"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "ipykernel>=6.29.5",
+    "ipython>=8.28.0",
     "matplotlib>=3.9.2",
     "numpy>=2.1.2",
+    "pandas>=2.2.3",
     "scipy>=1.14.1",
+    "sympy>=1.13.3",
 ]
