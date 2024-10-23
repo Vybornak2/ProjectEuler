@@ -5,6 +5,9 @@ Script to create a series of folders in a specified directory
 from pathlib import Path
 import argparse as ap
 
+FILE_DIR = Path(__file__).parent
+FILES_TO_COPY = [FILE_DIR / "description.md", FILE_DIR / "solution.ipynb"]
+
 
 def main(i_start: int, i_end: int, path: Path) -> None:
     """
@@ -31,7 +34,12 @@ def main(i_start: int, i_end: int, path: Path) -> None:
     for i in range(i_start, i_end + 1):
         directory_number = "0" * (3 - len(str(i))) + str(i)
         directory = path / f"p_{directory_number}"
+
         directory.mkdir(exist_ok=True)
+        for file in FILES_TO_COPY:
+            destination = directory / file.name
+            if not destination.exists():
+                destination.write_text(file.read_text())
 
 
 if __name__ == "__main__":
