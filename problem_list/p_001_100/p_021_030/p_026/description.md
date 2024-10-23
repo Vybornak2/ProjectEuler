@@ -1,6 +1,6 @@
-# Problem ID
+# Problem 26
 
-[**NAME**](https://projecteuler.net/problem=ID)
+[**NAME**](https://projecteuler.net/problem=26)
 
 ## Description:
 Fill ME

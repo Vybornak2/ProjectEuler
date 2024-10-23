@@ -6,7 +6,8 @@ from pathlib import Path
 import argparse as ap
 
 FILE_DIR = Path(__file__).parent
-FILES_TO_COPY = [FILE_DIR / "description.md", FILE_DIR / "solution.ipynb"]
+DESC_FILE = FILE_DIR / "description.md"
+SOLUTION_FILE = FILE_DIR / "solution.ipynb"
 
 
 def main(i_start: int, i_end: int, path: Path) -> None:
@@ -36,10 +37,13 @@ def main(i_start: int, i_end: int, path: Path) -> None:
         directory = path / f"p_{directory_number}"
 
         directory.mkdir(exist_ok=True)
-        for file in FILES_TO_COPY:
-            destination = directory / file.name
-            if not destination.exists():
-                destination.write_text(file.read_text())
+
+        if not (solution_file := directory / SOLUTION_FILE.name).exists():
+            solution_file.write_text(SOLUTION_FILE.read_text())
+
+        if not (desc_file := directory / DESC_FILE.name).exists():
+            desc_content = DESC_FILE.read_text().replace("ID", str(i))
+            desc_file.write_text(desc_content)
 
 
 if __name__ == "__main__":
