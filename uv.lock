@@ -630,7 +630,7 @@ requires-dist = [
     { name = "ipython", specifier = ">=8.28.0" },
     { name = "matplotlib", specifier = ">=3.9.2" },
     { name = "numpy", specifier = ">=2.1.2" },
-    { name = "pandas" },
+    { name = "pandas", specifier = ">=2.2.3" },
     { name = "scipy", specifier = ">=1.14.1" },
     { name = "sympy", specifier = ">=1.13.3" },
 ]
