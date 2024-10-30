@@ -641,7 +641,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "ruff" }]
+dev = [{ name = "ruff", specifier = ">=0.7.1" }]
 
 [[package]]
 name = "prompt-toolkit"
