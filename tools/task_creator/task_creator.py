@@ -8,12 +8,8 @@ from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Create Project Euler task files.")
-    parser.add_argument("problem_id", type=int, help="The Project Euler problem ID")
-    args = parser.parse_args()
-
-    task_info = extract_problem_info(args.problem_id)
+def main(problem_id: int) -> None:
+    task_info = extract_problem_info(problem_id)
     if "error" in task_info:
         print(f"Error extracting problem info: {task_info['error']}")
         return
@@ -147,4 +143,10 @@ def extract_problem_info(problem_id: int) -> dict[str, str | int]:
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Create Project Euler task files.")
+    parser.add_argument("problem_id", type=int, help="The Project Euler problem ID")
+    args = parser.parse_args()
+    main(args.problem_id)
+
+    # for i in range(1, 42):
+    # main(i)
