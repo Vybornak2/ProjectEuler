@@ -8,11 +8,14 @@ license = "MIT"
 authors = [{ name = "Jan Vyborny", email = "jan.vyborny2@gmail.com" }]
 maintainers = [{ name = "Jan Vyborny", email = "jan.vyborny2@gmail.com" }]
 dependencies = [
+    "beautifulsoup4>=4.14.3",
     "ipykernel>=6.29.5",
     "ipython>=8.28.0",
+    "markdownify>=1.2.2",
     "matplotlib>=3.9.2",
     "numpy>=2.1.2",
     "pandas>=2.2.3",
+    "requests>=2.32.5",
     "scipy>=1.14.1",
     "sympy>=1.13.3",
 ]
